@@ -34,7 +34,7 @@ const uint32_t g_ADigitalPinMap[] =
   33,  // D5  is P1.01 (SD card MOSI,       IO35)SPI1
    4,  // D6  is P0.04 (A0- EDA, IO25)
   20,  // D7  is P0.20 (BMI270 Interrupt 2,  IO50)
-  21,  // D8  is P0.21 (ADS1299 Clock ,      IO48)SPI2
+  21,  // D8  is P0.21 (ADS1299 SCK ,      IO48)SPI2
   16,  // D9  is P0.16 (GPIO4,               IO4) // Not in V2.0 design, maybe use for button
   15,  // D10 is P0.15 (SCL,                 IO3)
   14,  // D11 is P0.14 (SDA,                 IO2)
@@ -58,9 +58,9 @@ const uint32_t g_ADigitalPinMap[] =
   19,  // D27 is P0.19 ( IO52) is not connected per schematic
   47,  // D28 is P1.15 (ADS1299 Data Ready  IO40)SPI2
   34,  // D29 is P1.02 (SD card Chip select  IO36)SPI1
-  22,  // D30 is P0.22 (SD Card CD IO49)SPI1
+  22,  // D30 is P0.22 ( IO49) //  // Not used in V2.0 design
   23,  // D31 is P0.23 (ADS1299 MISO IO50)SPI2
-
+  11,  // D32 is P0.11 (BMI270 Interrup 1 IO32) 
    //3,  // DXX, is P0.03 (IO16) is not connected per schematic
   // 7,  // DXX P0.07 (IO45) is not connected per schematic
   // 8, // DXX is P0.08 (NA) not present in UBLOX
