@@ -1,0 +1,86 @@
+//  25, // P0.04 (IO25A_EDA_SIG) - Analog Signal*
+//  43, // P0.06 (IO43_RGB_LED_B) - RGB LED Blue *
+//  32, // P0.11 (IO32_BMI_INT1) - BMI270 Interrupt 1 *
+//   1, // P0.13 (IO01_SD_SCK) - SD card SCK*
+//   2, // P0.14 (SDA1) - i2c SDA *
+//   3, // P0.15 (SCL1) - i2c SCL *
+//   4, // P0.16 (IO4_RGB_LED_G) - RGB LED Green *
+//  19, // P0.18 (RESETN) - RESET_N*
+//  50, // P0.20 (IO50_BMI_INT2) - BMI270 Interrupt 2 *
+//  48, // P0.21 (IO48_ADS_SCK) - ADS1299 Clock*
+//  47, // P0.23 (IO47_ADS_MISO) - ADS1299 MISO*
+//   5, // P0.24 (IO5_RGB_LED_R) - RGB LED Red *
+//   7, // P0.25 (PDMDIN) - Microphone Data Out *
+//  42, // P0.26 (IO42_PDMCLK) - Microphone clock *
+//  44, // P0.27 (IO44_SD_CD) - SD Card CD*
+//  17, // P0.28 (IO17_FUEL_INT) - Fuel Gauge Interrupt *
+//  23, // P0.29 (IO23_PPG_INT) - PPG Interrupt *
+//   8, // P1.00 (IO08_USB_OTG) - USB OTG *
+//  35, // P1.01 (IO35_SD_MOSI) - SD card MOSI*
+//  36, // P1.02 (IO36_SD_CS) - SD card Chip select*
+//  34, // P1.08 (IO34_SD_MISO) - SD card MISO*
+//  39, // P1.11 (IO39_ADS_RST) - ADS1299 Reset*
+//  21, // P1.12 (IO21_ADS_CLKSEL) - ADS1299 Clock select *
+//  22, // P1.13 (IO22_ADS_CS) - ADS1299 Chip select *
+//  41, // P1.14 (IO41_ADS_MOSI) - ADS1299 MOSI *
+//  40, // P1.15 (IO40_ADS_DRDY) - ADS1299 Data Ready *
+
+
+# -----------------------------------
+# Fascia Particle Xenon
+# -----------------------------------
+
+fv2_particle_xenon.name=Fascia Xenon
+
+# VID/PID for Bootloader, Arduino & CircuitPython
+fv2_particle_xenon.vid.0=0x63C2
+fv2_particle_xenon.pid.0=0x0020
+fv2_particle_xenon.vid.1=0x63C2
+fv2_particle_xenon.pid.1=0xb020
+
+# Upload
+fv2_particle_xenon.bootloader.tool=bootburn
+fv2_particle_xenon.upload.tool=nrfutil
+fv2_particle_xenon.upload.protocol=nrfutil
+fv2_particle_xenon.upload.use_1200bps_touch=true
+fv2_particle_xenon.upload.wait_for_upload_port=true
+fv2_particle_xenon.upload.maximum_size=815104
+fv2_particle_xenon.upload.maximum_data_size=237568
+
+# Build
+fv2_particle_xenon.build.mcu=cortex-m4
+fv2_particle_xenon.build.f_cpu=64000000
+fv2_particle_xenon.build.board=FASCIA_PARTICLE_XENON
+fv2_particle_xenon.build.core=nRF5
+fv2_particle_xenon.build.variant=fv2_particle_xenon
+fv2_particle_xenon.build.usb_manufacturer="Particle"
+fv2_particle_xenon.build.usb_product="Xenon"
+fv2_particle_xenon.build.extra_flags=-DNRF52840_XXAA {build.flags.usb}
+fv2_particle_xenon.build.ldscript=nrf52840_s140_v6.ld
+fv2_particle_xenon.build.vid=0x63C2
+fv2_particle_xenon.build.pid=0x0020
+
+# SoftDevice Menu
+fv2_particle_xenon.menu.softdevice.s140v6=S140 6.1.1
+fv2_particle_xenon.menu.softdevice.s140v6.build.sd_name=s140
+fv2_particle_xenon.menu.softdevice.s140v6.build.sd_version=6.1.1
+fv2_particle_xenon.menu.softdevice.s140v6.build.sd_fwid=0x00B6
+
+# Debug Menu
+fv2_particle_xenon.menu.debug.l0=Level 0 (Release)
+fv2_particle_xenon.menu.debug.l0.build.debug_flags=-DCFG_DEBUG=0
+fv2_particle_xenon.menu.debug.l1=Level 1 (Error Message)
+fv2_particle_xenon.menu.debug.l1.build.debug_flags=-DCFG_DEBUG=1
+fv2_particle_xenon.menu.debug.l2=Level 2 (Full Debug)
+fv2_particle_xenon.menu.debug.l2.build.debug_flags=-DCFG_DEBUG=2
+fv2_particle_xenon.menu.debug.l3=Level 3 (Segger SystemView)
+fv2_particle_xenon.menu.debug.l3.build.debug_flags=-DCFG_DEBUG=3
+fv2_particle_xenon.menu.debug.l3.build.sysview_flags=-DCFG_SYSVIEW=1
+
+# Debug Output Menu
+fv2_particle_xenon.menu.debug_output.serial=Serial
+fv2_particle_xenon.menu.debug_output.serial.build.logger_flags=-DCFG_LOGGER=0
+fv2_particle_xenon.menu.debug_output.serial1=Serial1
+fv2_particle_xenon.menu.debug_output.serial1.build.logger_flags=-DCFG_LOGGER=1 -DCFG_TUSB_DEBUG=CFG_DEBUG
+fv2_particle_xenon.menu.debug_output.rtt=Segger RTT
+fv2_particle_xenon.menu.debug_output.rtt.build.logger_flags=-DCFG_LOGGER=2 -DCFG_TUSB_DEBUG=CFG_DEBUG -DSEGGER_RTT_MODE_DEFAULT=SEGGER_RTT_MODE_BLOCK_IF_FIFO_FULL
