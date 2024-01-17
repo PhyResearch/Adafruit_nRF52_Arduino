@@ -24,3 +24,6 @@
 /boards.local.txt
 /platform.local.txt
 
+*.zip
+*.hex
+*.uf2
