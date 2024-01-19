@@ -1,4 +1,3 @@
-
  /*
   Copyright (c) 2014-2015 Arduino LLC.  All right reserved.
   Copyright (c) 2016 Sandeep Mistry All right reserved.
@@ -49,7 +48,9 @@ extern "C"
 
 #define LED_BUILTIN          PIN_LED1
 
-#define LED_BLUE             PIN_LED1
+#define LEDR             (0)
+#define LEDG             (9)
+#define LEDB             (3)
 
 #define LED_STATE_ON         1         // State when LED is litted
 
