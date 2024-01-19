@@ -1,3 +1,4 @@
+
  /*
   Copyright (c) 2014-2015 Arduino LLC.  All right reserved.
   Copyright (c) 2016 Sandeep Mistry All right reserved.
@@ -37,13 +38,13 @@ extern "C"
 #endif // __cplusplus
 
 // Number of pins defined in PinDescription array
-#define PINS_COUNT           (32)
-#define NUM_DIGITAL_PINS     (32)
+#define PINS_COUNT           (33)
+#define NUM_DIGITAL_PINS     (33)
 #define NUM_ANALOG_INPUTS    (2)
 #define NUM_ANALOG_OUTPUTS   (0)
 
 // LEDs
-#define PIN_LED1             (3)
+#define PIN_LED1             (14)
 
 
 #define LED_BUILTIN          PIN_LED1
@@ -114,9 +115,9 @@ static const uint8_t SCK  = PIN_SPI_SCK ;
 #define PIN_SPI1_MISO         (31)
 #define PIN_SPI1_MOSI         (21)
 #define PIN_SPI1_SCK          (8)
-#define PIN_SPI1_SD_CS        (23)
+#define PIN_SPI1_CS        (23)
 
-static const uint8_t SS1   = PIN_SPI1_SD_CS;
+static const uint8_t SS1   = PIN_SPI1_CS;
 static const uint8_t MOSI1 = PIN_SPI1_MOSI ;
 static const uint8_t MISO1 = PIN_SPI1_MISO ;
 static const uint8_t SCK1  = PIN_SPI1_SCK ;
